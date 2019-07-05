@@ -1,6 +1,6 @@
 env:
   global:
-    - REPO_DIR=MorphIO
+    - REPO_DIR=MVDTool
     # Commit from your-project that you want to build
     - BUILD_COMMIT=HEAD
     # pip dependencies to _build_ your project
@@ -111,4 +111,4 @@ after_success:
     # Copy compiled wheels to dist/ where Travis `dpl` tool can find them and upload to PyPI
     - mkdir -p dist; cp ${TRAVIS_BUILD_DIR}/wheelhouse/*.whl dist
     - pip install twine
-    - twine upload --verbose -u bbp.opensource -p ${PYPI_PASSWORD} dist/*
+    - twine upload --verbose -u iomagkanaris -p iomagkBP dist/*
