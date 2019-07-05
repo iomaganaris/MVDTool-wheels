@@ -21,6 +21,7 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - libboost-all-dev
+      - libhdf5-dev
   homebrew:
     packages:
       - boost
@@ -104,6 +105,16 @@ jobs:
         - MB_PYTHON_VERSION=pypy-5.7
 
 before_install:
+    - pip install setuptools_scm
+      #    - dpkg -l | grep hdf5
+    - cd HighFive
+    - mkdir build
+    - cd build
+    - cmake ..
+    - make
+    - export CMAKE_PREFIX_PATH=`pwd`
+    - pwd
+    - cd ../..
     - source multibuild/common_utils.sh
     - source multibuild/travis_steps.sh
     - clean_code $REPO_DIR $BUILD_COMMIT

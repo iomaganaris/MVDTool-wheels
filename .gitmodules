@@ -4,3 +4,6 @@
 [submodule "MVDTool"]
 	path = MVDTool
 	url = https://github.com/BlueBrain/MVDTool
+[submodule "HighFive"]
+	path = HighFive
+	url = https://github.com/BlueBrain/HighFive
